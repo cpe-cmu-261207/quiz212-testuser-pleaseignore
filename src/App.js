@@ -1,4 +1,27 @@
-function App() {
+import React, { Component } from "react";
+export default class Counter extends Component {
+
+  function App() {
+  
+  constructor(Persons) {
+    this.state = {
+      count: 0
+    };
+    increment() {
+  this.setState({
+    this.state.count: this.state.count + 1
+  });
+};
+decrement() {
+  this.setState({
+    this.state.count: this.state.count - 1
+  });
+};
+reset() {
+  this.setState({
+    this.state.count: 0
+  });
+};
   const persons = [
     {
       name: "Bob",
@@ -14,6 +37,11 @@ function App() {
   return (
     <div class="ml-2">
       {/* Code me please! */}
+      Current count: {this.state.count}
+        <hr />
+        <Button sign="+" count={this.state.count} updateCount={this.handleCount.bind(this)} />
+        <Button sign="-" count={this.state.count} updateCount={this.handleCount.bind(this)} />
+        <button className='reset' onClick={this.reset}>Reset</button>
       <div class="mb-4">
         <h3 class="title is-3">ID Counter</h3>
         <p>YOUR ID HERE</p>
